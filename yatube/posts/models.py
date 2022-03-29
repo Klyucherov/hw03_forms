@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from .validators import validate_not_empty
 
 User = get_user_model()
 
@@ -52,7 +51,6 @@ class Post(models.Model):
         help_text='Выберите группу'
     )
     text = models.TextField(
-        validators=[validate_not_empty],
         verbose_name='Текст поста',
         help_text='Введите текст поста'
     )
